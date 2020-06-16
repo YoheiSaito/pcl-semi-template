@@ -1,6 +1,18 @@
 #!/bin/bash
 PROJECT="ply_viewer"
 EDITOR="code"
+function download() {
+    cd ..
+    if [ ! -e bunny.tar.gz ]; then
+        wget http://graphics.stanford.edu/pub/3Dscanrep/bunny.tar.gz
+        tar xf bunny.tar.gz
+        mv ./bunny/data/bun*.ply .
+        rm -rf bunny
+    else
+        echo "bunny is already downloaded"
+    fi
+    cd -
+}
 function prepare () {
     mkdir build
     cd ./build && cmake ../source -DPROJ=$PROJECT && cd ..
@@ -32,8 +44,10 @@ function edit () {
 }
 
 case $1 in
-"edit" | "run" | "build" | "clean" | "compare" ) $@
+ "download" |"edit" | "run" | "build" | "clean" | "compare" ) $@
     ;;
- * ) run $*
+ * ) 
+     build
+     run $*
     ;;
 esac
