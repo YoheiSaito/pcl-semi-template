@@ -53,6 +53,10 @@ case $1 in
      build 
      run ../bun000.ply ../bun045.ply ../bun315.ply 
     ;;
+ "semi2")
+     build 
+     run ../bun000.ply ../bun045.ply 
+    ;;
  * ) 
      build
      run $*
