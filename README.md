@@ -1,20 +1,22 @@
 # pcl-semi-template
 
-## 準備
-### 初回のみ
-stanford 3d repositoryをダウンロード済みの人は不要
-pcl-semiディレクトリで
+## 初回だけ実行する
 ```
-git clone https://github.com/YoheiSaito/pcl-semi-template pcl-semi1
-./compile.sh download
+mkdir pcl-semi
 ```
-### 2回目以降
+## 毎回実行する準備
 pcl-semiディレクトリで
 ```
 git clone https://github.com/YoheiSaito/pcl-semi-template
 mv pcl-semi-template pcl-semiN #Nはゼミの回数
 cd $_
 ```
+### 初回のみ stanfordレポジトリをダウンロード
+stanford 3d repositoryをダウンロード済みの人は不要
+```
+./compile.sh download
+```
+
 ## vscodeを開く
 ```
 ./compile.sh edit
